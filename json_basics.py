@@ -1,7 +1,7 @@
 import json 
 
 #json to Python ----------------------------------
-print("Here we convert Json to Python") 
+print("\n" + "Here we convert Json to Python") 
 x = '{"name":"John", "age":30, "city":"New York"}'
 
 #Parse it here
@@ -13,7 +13,7 @@ print(y["age"])
 
 
 #Python to json ---------------------------------
-print("Here we convert Python to json") 
+print("\n" + "Here we convert Python to json") 
 x = {
     "name": "John",
     "age": 30, 
@@ -41,7 +41,7 @@ print(y)
 
 #Convert a python object containing all the legal data types: 
 
-print("Here we convert a python object containing all the legal data types") 
+print("\n" + "Here we convert a python object containing all the legal data types") 
 x = {
     "name": "John", 
     "age": 30, 
@@ -56,4 +56,18 @@ x = {
 }
 
 print(json.dumps(x))
+
+
+
+
+#Formating and indenting
+
+print("\n" + "Here we convert add an indent of 4") 
+print(json.dumps(x, indent=4))
+
+print("\n" + "Here add seperators") 
+print(json.dumps(x, indent=4, separators=(". ", " = ")))
+
+print("\n" + "Here add sorting") 
+print(json.dumps(x, indent=4, sort_keys=True))
 
