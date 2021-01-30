@@ -38,4 +38,18 @@ for user, num_complete in top_users:
 
 max_users = " and ".join(users) 
 
+#Define a function to filter out completed TODOS
+#of users with max completed TODOS
+
+def keep(todo):
+    is_completed = todo["completed"]
+    has_max_count = str(todo["userId"]) in users
+    return is_complete and has_max_count 
+
+#Write filitered TODOs to file 
+
+with open("filtered_data_file.json", "w") as data_file: 
+    filitered_todos = list(filter(keep, todos)) 
+    json.dump(filtered_todos, data_file, indent=2)
+
 
