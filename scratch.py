@@ -4,7 +4,7 @@ import json
 import requests
 
 respone = requests.get("https://jsonplaceholder.typicode.com/todos")
-todos = json.loads(response.text)
+todos = json.loads(response)
 
 #Map of userId to number of complete TODOS for that user 
 todos_by_user = {} 
